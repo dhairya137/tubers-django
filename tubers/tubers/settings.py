@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'tubers.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'lcotubers2',
+        'NAME': 'lcotubers',
         'USER': 'postgres',
         'PASSWORD': 'dhairya',
         'HOST': 'localhost'
