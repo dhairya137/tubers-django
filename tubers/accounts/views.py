@@ -1,13 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect 
+from django.contrib.auth import logout
 
 def login(request):
-  pass
+  return render(request, 'accounts/login.html')
 
 def register(request):
-  pass
+  return render(request, 'accounts/register.html')
 
 def logout_user(request):
-  pass
+  logout(request)
+  return redirect('home')
 
 def dashboard(request):
-  pass
+  return render(request, 'accounts/dashboard.html')
