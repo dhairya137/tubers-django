@@ -4,6 +4,20 @@ from django.contrib.auth.models import User
 from django.contrib import messages, auth
 
 def login(request):
+  if request.method == 'POST':
+    username = request.POST['username']
+    password = request.POST['password']
+
+    user = auth.authenticate(username=username, password=password)
+
+    if user is not None:
+      auth.login(request, user)
+      messages.success(request, "You are logged in")
+      return redirect('dashboard')
+    else:
+      messages.error(request, "Invalid credentials")
+      return redirect('login')
+
   return render(request, 'accounts/login.html')
 
 def register(request):
