@@ -13,10 +13,12 @@
   <section class="container mt-5">
     <h2 class="text-center">Welcome to Dashboard</h2>
     <h4 class="text-center text-white-50">
-      hi, First_name. Hope you are having a good day
+      {% if user.is_authenticated %}
+      Hi, {{ user.first_name }}. Hope you are having a good day
+      {% endif %}
     </h4>
 
-    <div class="table-responsive- mt-3">
+    <!-- <div class="table-responsive- mt-3">
 
       <table class="table table-striped">
         <thead>
@@ -54,7 +56,7 @@
           </tr>
         </tbody>
       </table>
-    </div>
+    </div> -->
 
   </section>
 </main>
